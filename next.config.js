@@ -5,7 +5,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  basePath: "/ipod",
+  // basePath: "/podium",  <-- hapus baris ini bro!
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
