@@ -14,6 +14,7 @@ export default async function Page({
     <Ipod
       spotifyCallbackCode={spotifyCode}
       appleAccessToken={appleAccessToken}
+      soundcloudUrl={soundcloudUrl}
     />
   );
 }
