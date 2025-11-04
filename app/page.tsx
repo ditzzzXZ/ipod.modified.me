@@ -7,14 +7,14 @@ export default async function Page({
   searchParams: Record<string, string | undefined>;
 }) {
   const appleAccessToken = APPLE_DEVELOPER_TOKEN ?? "";
-
   const spotifyCode = searchParams.code;
+  const soundcloudUrl = searchParams.soundcloud; // 🔥 tambahin ini!
 
   return (
     <Ipod
       spotifyCallbackCode={spotifyCode}
       appleAccessToken={appleAccessToken}
-      soundcloudUrl={soundcloudUrl}
+      soundcloudUrl={soundcloudUrl} // 🔥 baru ini bisa dikirim!
     />
   );
 }
