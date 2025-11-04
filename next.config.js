@@ -6,7 +6,7 @@ enabled: process.env.ANALYZE === "true",
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 reactStrictMode: false,
-basePath: "/podium",
+basePath: "/ipod",
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
