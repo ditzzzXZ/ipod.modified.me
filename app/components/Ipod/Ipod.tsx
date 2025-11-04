@@ -31,10 +31,10 @@ type Props = {
    * This is the code that is used to get the access token.
    */
   spotifyCallbackCode?: string;
-  soundcloudUrl?: string;
+  soundcloudUrl?: string; // 🔥 kita tambahin prop ini
 };
 
-const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
+const Ipod = ({ appleAccessToken, spotifyCallbackCode, soundcloudUrl }: Props) => {
   const router = useRouter();
   const queryClient = new QueryClient();
   const [isLoading, setIsLoading] = useState(true);
@@ -42,9 +42,7 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
   const handleCheckSpotifyCallback = useCallback(
     async (code: string) => {
       await SpotifyUtils.handleSpotifyCode(code);
-
       setIsLoading(false);
-
       router.replace("/");
     },
     [router]
@@ -76,6 +74,21 @@ const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
                       <Sticker $deviceTheme={deviceTheme} />
                       <Sticker2 $deviceTheme={deviceTheme} />
                       <Sticker3 $deviceTheme={deviceTheme} />
+
+                      {/* 🔥 Tambahin pemutar SoundCloud */}
+                      {soundcloudUrl && (
+                        <iframe
+                          width="0"
+                          height="0"
+                          allow="autoplay"
+                          src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
+                            soundcloudUrl
+                          )}&auto_play=true`}
+                          style={{ display: "none" }}
+                        ></iframe>
+                      )}
+                      {/* 🔥 Akhir tambahan */}
+
                       <ScreenContainer>
                         <ViewManager />
                       </ScreenContainer>
