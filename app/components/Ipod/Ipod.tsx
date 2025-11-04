@@ -31,6 +31,7 @@ type Props = {
    * This is the code that is used to get the access token.
    */
   spotifyCallbackCode?: string;
+  soundcloudUrl?: string;
 };
 
 const Ipod = ({ appleAccessToken, spotifyCallbackCode }: Props) => {
